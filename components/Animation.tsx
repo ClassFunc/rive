@@ -6,7 +6,7 @@ export const Animation = () => {
     const { rive, RiveComponent } = useRive({
         src: '/rive/ver.riv',
         stateMachines: "bumpy",
-        autoplay:false,
+        autoplay:true,
         artboard: 'Truck',
     });
     const bumpInput = useStateMachineInput(rive, "bumpy", "bump");
@@ -14,8 +14,6 @@ export const Animation = () => {
     return (
         <RiveComponent
             className={`w-full h-[50vh]`}
-            onMouseMove={()=>{rive?.play()}}
-            onMouseLeave={()=>{rive?.pause()}}
             onClick={() => {
                 console.log(rive?.contents)
                 bumpInput && bumpInput.fire()
