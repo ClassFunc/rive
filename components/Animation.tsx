@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 
 export const Animation = () => {
-    const [input, setInput] = useState<number>(1)
-    const [isPlaying, setIsPlaying] = useState(false);
     const { rive, RiveComponent } = useRive({
         src: '/rive/ver.riv',
         stateMachines: "bumpy",
