@@ -8,14 +8,13 @@ export const Animation3 = () => {
         artboard:'Abu',
         animations:['nhaymat'],
         autoplay: true,
-
     });
-    console.log(rive?.contents)
 
     return (
         <RiveComponent
             className={`w-full h-[50vh]`}
             onClick={() => {
+                console.log(rive?.contents)
             }}
         />
     );

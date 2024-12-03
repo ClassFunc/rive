@@ -13,18 +13,19 @@ export const Animation2 = () => {
                 // console.log(event?.data[0])
         })
     });
-    const bumpInput = useStateMachineInput(rive, "StateMachine1", "Number1", input);
-    console.log(input)
+    // const bumpInput = useStateMachineInput(rive, "StateMachine1", "Number1", true);
+    // console.log(input)
 
     return (
         <RiveComponent
             className={`w-full h-[50vh]`}
-            // onMouseMove={()=>{rive?.play()}}
-            // onMouseLeave={()=>{rive?.pause()}}
             onClick={() => {
                 console.log(rive?.contents)
+                console.log(rive?.activeArtboard)
+                console.log(rive?.playingAnimationNames)
+                console.log(rive?.playingStateMachineNames)
+                rive?.setNumberStateAtPath('Number1', 3, 'mouth')
                 setInput(prevState => prevState + 1)
-                bumpInput && bumpInput.fire()
             }}
         />
     );
