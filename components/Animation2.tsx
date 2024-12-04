@@ -6,9 +6,9 @@ export const Animation2 = () => {
     const [input, setInput] = useState<string>('default')
     const {rive, RiveComponent} = useRive({
         src: '/rive/bingo.riv',
-        stateMachines: "StateMachine1",
+        stateMachines: "State_Machine_1",
         autoplay: false,
-        artboard: 'mouth',
+        artboard: 'Main',
     });
     return (
         <div className={`w-full h-[50vh] flex flex-col justify-center items-center`}>

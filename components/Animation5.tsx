@@ -2,15 +2,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {useRive, useStateMachineInput} from '@rive-app/react-canvas';
 
-export const Animation4 = () => {
+export const Animation5 = () => {
     const [number, setNumber] = useState(0);
     const {rive, RiveComponent} = useRive({
         src: '/rive/bingo.riv',
-        artboard: 'mouth',
+        artboard: 'Main',
         stateMachines: "State_Machine_1",
         autoplay: true,
     });
-    const rating = useStateMachineInput(rive, "State_Machine_1", "Number_B");
+    const rating = useStateMachineInput(rive, "State_Machine_1", "Number_A");
 
 
     useEffect(() => {
