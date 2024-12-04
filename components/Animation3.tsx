@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 
 export const Animation3 = () => {
+    const [playing, setPlaying] = useState<boolean>(false)
     const { rive, RiveComponent } = useRive({
         src: '/rive/abu.riv',
         artboard:'Abu',
@@ -14,7 +15,12 @@ export const Animation3 = () => {
         <RiveComponent
             className={`w-full h-[50vh]`}
             onClick={() => {
-                console.log(rive?.contents)
+                if(playing){
+                    rive?.pause()
+                }else {
+                    rive?.play()
+                }
+                setPlaying(!playing)
             }}
         />
     );
