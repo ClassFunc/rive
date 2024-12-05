@@ -1,7 +1,6 @@
 "use client"
 import React, {useEffect, useState} from 'react';
-import {Rive, useRive, useStateMachineInput} from '@rive-app/react-canvas';
-import {UseRiveParameters} from "@rive-app/react-canvas/dist/types/types";
+import {EventType, Rive, RiveEventType, useRive, UseRiveParameters, useStateMachineInput} from '@rive-app/react-canvas';
 
 export const Animation5 = () => {
 
@@ -33,6 +32,32 @@ export const Animation5 = () => {
             smMouth.value = mouthValue
         }
     }, [mouthValue, smMouth]);
+
+    const onRiveEventReceived = (riveEvent: any) => {
+        const eventData = riveEvent.data;
+        if (!eventData) {
+            return;
+        }
+        const eventProperties = eventData.properties;
+        if (eventData.type === RiveEventType.General) {
+            console.log("Event name", eventData.name);
+            // Added relevant metadata from the event
+            console.log("Rating", eventProperties.rating);
+            console.log("Message", eventProperties.message);
+        } else if (eventData.type === RiveEventType.OpenUrl) {
+            console.log("Event name", eventData.name);
+            // Handle OpenUrl event manually
+            // window.location.href = data.url;
+        }
+    };
+
+    // Wait until the rive object is instantiated before adding the Rive
+    // event listener
+    useEffect(() => {
+        if (riveMain) {
+            riveMain.on(EventType.RiveEvent, onRiveEventReceived);
+        }
+    }, [riveMain]);
 
     return (
         <div className={`w-full h-[50vh] flex flex-col justify-center items-center`}>
