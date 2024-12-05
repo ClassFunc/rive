@@ -102,6 +102,7 @@ const riveLogger = ({rive}: {
     }
 
     console.group();
+    console.log('artboardName:', rive.activeArtboard)
     console.log('animationNames:', rive.animationNames)
     console.log(`stateMachineNames: (${rive.stateMachineNames.length})`, rive.stateMachineNames,)
     for (const sn of rive.stateMachineNames) {
