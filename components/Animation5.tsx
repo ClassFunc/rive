@@ -18,7 +18,7 @@ export const Animation5 = () => {
         riveMain?.play('Gat_dau');
 
         const mouthStates = await textToMouthStates(text, charToMouthState);
-
+        console.log({mouthStates})
         let index = 0;
 
         const interval = setInterval(() => {
@@ -47,7 +47,7 @@ export const Animation5 = () => {
             />
             <input
                 type="text"
-                className="text-black p-3 m-3"
+                className="text-black p-3 m-3 w-2/3 rounded-md border"
                 placeholder="Enter text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
