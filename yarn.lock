@@ -557,6 +557,11 @@ hasown@^2.0.2:
   dependencies:
     function-bind "^1.1.2"
 
+hyphen@^1.10.6:
+  version "1.10.6"
+  resolved "https://registry.yarnpkg.com/hyphen/-/hyphen-1.10.6.tgz#0e779d280e696102b97d7e42f5ca5de2cc97e274"
+  integrity sha512-fXHXcGFTXOvZTSkPJuGOQf5Lv5T/R2itiiCVPg9LxAje5D00O0pP83yJShFq5V89Ly//Gt6acj7z8pbBr34stw==
+
 is-arrayish@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
